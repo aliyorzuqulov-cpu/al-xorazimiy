@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamonaviy Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js (Grafik uchun) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans flex h-screen overflow-hidden">
+
+    <!-- 1. Yon panel (Sidebar) -->
+    <aside class="w-64 bg-slate-800 border-r border-slate-700 flex flex-col justify-between hidden md:flex">
+        <div>
+            <!-- Logo -->
+            <div class="h-16 flex items-center px-6 border-b border-slate-700">
+                <i class="fa-solid fa-chart-line text-indigo-500 text-2xl mr-3"></i>
+                <span class="text-xl font-bold tracking-wider">Dash<span class="text-indigo-500">Board</span></span>
+            </div>
+            <!-- Menyu havolalari -->
+            <nav class="p-4 space-y-2">
+                <a href="#" class="flex items-center px-4 py-2.5 rounded-lg bg-indigo-600 text-white font-medium transition">
+                    <i class="fa-solid fa-house w-6"></i> Asosiy sahifa
+                </a>
+                <a href="#" class="flex items-center px-4 py-2.5 rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white transition">
+                    <i class="fa-solid fa-users w-6"></i> Foydalanuvchilar
+                </a>
+                <a href="#" class="flex items-center px-4 py-2.5 rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white transition">
+                    <i class="fa-solid fa-wallet w-6"></i> Moliyaviy hisobot
+                </a>
+                <a href="#" class="flex items-center px-4 py-2.5 rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white transition">
+                    <i class="fa-solid fa-chart-pie w-6"></i> Statistikalar
+                </a>
+                <a href="#" class="flex items-center px-4 py-2.5 rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white transition">
+                    <i class="fa-solid fa-gear w-6"></i> Sozlamalar
+                </a>
+            </nav>
+        </div>
+        <!-- Chiqish tugmasi -->
+        <div class="p-4 border-t border-slate-700">
+            <a href="#" class="flex items-center px-4 py-2.5 rounded-lg text-rose-400 hover:bg-rose-500/10 transition">
+                <i class="fa-solid fa-right-from-bracket w-6"></i> Chiqish
+            </a>
+        </div>
+    </aside>
+
+    <!-- 2. Asosiy qism (Main Content) -->
+    <div class="flex-1 flex flex-col h-screen overflow-y-auto">
+        
+        <!-- Yuqori navigatsiya (Navbar) -->
+        <header class="h-16 bg-slate-800 border-b border-slate-700 flex items-center justify-between px-6 sticky top-0 z-10">
+            <div class="flex items-center space-x-4">
+                <button class="md:hidden text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+                <div class="relative">
+                    <i class="fa-solid fa-search absolute left-3 top-3 text-slate-400"></i>
+                    <input type="text" placeholder="Qidirish..." class="bg-slate-900 text-sm text-slate-200 pl-10 pr-4 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-indigo-500 w-48 md:w-64">
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="relative text-slate-400 hover:text-white">
+                    <i class="fa-regular fa-bell text-xl"></i>
+                    <span class="absolute top-0 right-0 w-2 h-2 bg-indigo-500 rounded-full"></span>
+                </button>
+                <div class="flex items-center space-x-3 border-l border-slate-700 pl-4">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="w-10 h-10 rounded-full object-cover">
+                    <div class="hidden sm:block">
+                        <h4 class="text-sm font-semibold">Malika Umarova</h4>
+                        <p class="text-xs text-slate-400">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sahifa tarkibi -->
+        <main class="p-6 space-y-6">
+            <!-- Xush kelibsiz bloki -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg">
+                <div>
+                    <h1 class="text-2xl font-bold">Xush kelibsiz, Malika! 👋</h1>
+                    <p class="text-slate-400 text-sm mt-1">Bugungi ko'rsatkichlar va statistikalar bilan tanishing.</p>
+                </div>
+                <button class="mt-4 md:mt-0 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-medium transition shadow-lg shadow-indigo-600/30">
+                    <i class="fa-solid fa-plus mr-2"></i> Yangi qo'shish
+                </button>
+            </div>
+
+            <!-- Statistika kartochkalari -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Karta 1 -->
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamonaviy Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js (Grafik uchun) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans flex h-screen overflow-hidden">
+
+    <!-- 1. Yon panel (Sidebar) -->
+    <aside class="w-64 bg-slate-800 border-r border-slate-700 flex flex-col justify-between hidden md:flex">
+        <div>
+            <!-- Logo -->
+            <div class="h-16 flex items-center px-6 border-b border-slate-700">
+                <i class="fa-solid fa-chart-line text-indigo-500 text-2xl mr-3"></i>
+                <span class="text-xl font-bold tracking-wider">Dash<span class="text-indigo-500">Board</span></span>
+            </div>
+            <!-- Menyu havolalari -->
+            <nav class="p-4 space-y-2">
+                <a href="#" class="flex items-center px-4 py-2.5 rounded-lg bg-indigo-600 text-white font-medium transition">
+                    <i class="fa-solid fa-house w-6"></i> Asosiy sahifa
+                </a>
+                <a href="#" class="flex items-center px-4 py-2.5 rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white transition">
+                    <i class="fa-solid fa-users w-6"></i> Foydalanuvchilar
+                </a>
+                <a href="#" class="flex items-center px-4 py-2.5 rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white transition">
+                    <i class="fa-solid fa-wallet w-6"></i> Moliyaviy hisobot
+                </a>
+                <a href="#" class="flex items-center px-4 py-2.5 rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white transition">
+                    <i class="fa-solid fa-chart-pie w-6"></i> Statistikalar
+                </a>
+                <a href="#" class="flex items-center px-4 py-2.5 rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white transition">
+                    <i class="fa-solid fa-gear w-6"></i> Sozlamalar
+                </a>
+            </nav>
+        </div>
+        <!-- Chiqish tugmasi -->
+        <div class="p-4 border-t border-slate-700">
+            <a href="#" class="flex items-center px-4 py-2.5 rounded-lg text-rose-400 hover:bg-rose-500/10 transition">
+                <i class="fa-solid fa-right-from-bracket w-6"></i> Chiqish
+            </a>
+        </div>
+    </aside>
+
+    <!-- 2. Asosiy qism (Main Content) -->
+    <div class="flex-1 flex flex-col h-screen overflow-y-auto">
+        
+        <!-- Yuqori navigatsiya (Navbar) -->
+        <header class="h-16 bg-slate-800 border-b border-slate-700 flex items-center justify-between px-6 sticky top-0 z-10">
+            <div class="flex items-center space-x-4">
+                <button class="md:hidden text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+                <div class="relative">
+                    <i class="fa-solid fa-search absolute left-3 top-3 text-slate-400"></i>
+                    <input type="text" placeholder="Qidirish..." class="bg-slate-900 text-sm text-slate-200 pl-10 pr-4 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-indigo-500 w-48 md:w-64">
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="relative text-slate-400 hover:text-white">
+                    <i class="fa-regular fa-bell text-xl"></i>
+                    <span class="absolute top-0 right-0 w-2 h-2 bg-indigo-500 rounded-full"></span>
+                    <div class="hidden sm:block">
+                        <h4 class="text-sm font-semibold">Malika Umarova</h4>
+                        <p class="text-xs text-slate-400">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sahifa tarkibi -->
+        <main class="p-6 space-y-6">
+            <!-- Xush kelibsiz bloki -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg">
+                <div>
+                    <h1 class="text-2xl font-bold">Xush kelibsiz, Malika! 👋</h1>
+                    <i class="fa-solid fa-plus mr-2"></i> Yangi qo'shish
+                </button>
+            </div>
+
+            <!-- Statistika kartochkalari -->
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-400 text-sm">Jami foydalanuvchilar</span>
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mt-4">24,521</h3>
+                    <p class="text-emerald-400 text-xs mt-2"><i class="fa-solid fa-arrow-trend-up"></i> +12% o'tgan oyga nisbatan</p>
+                </div>
+                <!-- Karta 2 -->
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-400 text-sm">Umumiy daromad</span>
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mt-4">$48,290</h3>
+                    <p class="text-emerald-400 text-xs mt-2"><i class="fa-solid fa-arrow-trend-up"></i> +8.4% o'tgan oyga nisbatan</p>
+                </div>
+                <!-- Karta 3 -->
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-400 text-sm">Faol buyurtmalar</span>
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mt-4">1,423</h3>
+                    <p class="text-rose-400 text-xs mt-2"><i class="fa-solid fa-arrow-trend-down"></i> -2.1% o'tgan oyga nisbatan</p>
+                </div>
+                <!-- Karta 4 -->
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-400 text-sm">Konversiya</span>
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mt-4">3.64%</h3>
+                    <p class="text-emerald-400 text-xs mt-2"><i class="fa-solid fa-arrow-trend-up"></i> +0.8% o'tgan oyga nisbatan</p>
+                </div>
+            </div>
+
+            <!-- Grafik va Jadval bo'limi -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Grafik -->
+                <div class="lg:col-span-2 bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                    <h3 class="text-lg font-bold mb-4">Daromadlar dinamikasi</h3>
+                    <canvas id="myChart" height="110"></canvas>
+                </div>
+                <!-- So'nggi faollik -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                    <h3 class="text-lg font-bold mb-4">So'nggi harakatlar</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-9 h-9 bg-indigo-500/10 text-indigo-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-user-plus text-sm"></i>
+                            </div>
+                            <div class="flex-1 text-sm">
+                                <p class="font-medium">Yangi foydalanuvchi qo'shildi</p>
+                                <span class="text-slate-400 text-xs">2 daqiqa oldin</span>
+                            </div>
+                        </div>
+                            </div>
+                            <div class="flex-1 text-sm">
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-9 h-9 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                <p class="font-medium">Server xotirasi to'lib bormoqda</p>
+                                <span class="text-slate-400 text-xs">1 soat oldin</span>
+                </div>
+            </div>
+
+        </main>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+                datasets: [{
+                    label: 'Daromad ($)',
+                    data: [12000, 19000, 15000, 25000, 22000, 30000, 48290],
+                    borderColor: '#6366f1',
+                    backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: { grid: { color: '#334155' } },
+                    y: { grid: { color: '#334155' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>            type: 'line',
+            data: {
+                labels: ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyun', 'Iyul'],
+    </div>
+
+    <!-- Grafikni sozlash uchun JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                                <i class="fa-solid fa-triangle-exclamation text-sm"></i>
+                            </div>
+                            <div class="flex-1 text-sm">
+                                <p class="font-medium">To'lov muvaffaqiyatli o'tdi</p>
+                                <span class="text-slate-400 text-xs">15 daqiqa oldin</span>
+                            </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-9 h-9 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-credit-card text-sm"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Karta 1 -->
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+                    <p class="text-slate-400 text-sm mt-1">Bugungi ko'rsatkichlar va statistikalar bilan tanishing.</p>
+                </div>
+                <button class="mt-4 md:mt-0 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-medium transition shadow-lg shadow-indigo-600/30">
+                </button>
+                <div class="flex items-center space-x-3 border-l border-slate-700 pl-4">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="w-10 h-10 rounded-full object-cover">
